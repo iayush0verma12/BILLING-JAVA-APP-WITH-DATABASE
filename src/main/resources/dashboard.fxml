@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.DashboardController"
+            stylesheets="@dashboard.css">
+
+    <!-- Left Navigation Panel -->
+    <left>
+        <VBox fx:id="navPanel" styleClass="nav-panel">
+            <Label text="Dashboard" onMouseClicked="#switchToDashboard" styleClass="nav-item" />
+            <Label text="Items" onMouseClicked="#switchToItemsPage" styleClass="nav-item" />
+            <Label text="Sales" onMouseClicked="#switchToSales" styleClass="nav-item" />
+            <Label text="Customer" onMouseClicked="#switchToCustomer" styleClass="nav-item" />
+            <Label text="Administrative" onMouseClicked="#switchToAdministrative" styleClass="nav-item" />
+        </VBox>
+    </left>
+
+    <!-- Main Content -->
+    <center>
+        <GridPane styleClass="dashboard-grid">
+            <!-- Today Sales -->
+            <VBox fx:id="todaySalesCard" styleClass="dashboard-card" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                <Label text="Today Sales" styleClass="card-header" />
+                <Label fx:id="todaySalesValue" text="Loading..." styleClass="card-body" />
+                <Label fx:id="todaySalesCount" text="Loading..." styleClass="card-body" />
+            </VBox>
+
+            <!-- Last 7 Days -->
+            <VBox fx:id="last7DaysSalesCard" styleClass="dashboard-card" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                <Label text="Last 7 Days" styleClass="card-header" />
+                <Label fx:id="last7DaysSalesValue" text="Loading..." styleClass="card-body" />
+                <Label fx:id="last7DaysSalesCount" text="Loading..." styleClass="card-body" />
+            </VBox>
+
+            <!-- Last 30 Days -->
+            <VBox fx:id="last30DaysSalesCard" styleClass="dashboard-card" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                <Label text="Last 30 Days" styleClass="card-header" />
+                <Label fx:id="last30DaysSalesValue" text="Loading..." styleClass="card-body" />
+                <Label fx:id="last30DaysSalesCount" text="Loading..." styleClass="card-body" />
+            </VBox>
+
+            <!-- This Year -->
+            <VBox fx:id="thisYearSalesCard" styleClass="dashboard-card" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                <Label text="This Year" styleClass="card-header" />
+                <Label fx:id="thisYearSalesValue" text="Loading..." styleClass="card-body" />
+                <Label fx:id="thisYearSalesCount" text="Loading..." styleClass="card-body" />
+            </VBox>
+        </GridPane>
+    </center>
+
+</BorderPane>

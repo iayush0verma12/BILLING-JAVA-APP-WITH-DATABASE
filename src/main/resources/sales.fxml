@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.SalesController" stylesheets="sales.css">
+    <left>
+        <VBox fx:id="navPanel" styleClass="nav-panel">
+            <Label text="Dashboard" onMouseClicked="#switchToDashboard" styleClass="nav-item" />
+            <Label text="Items" onMouseClicked="#switchToItemsPage" styleClass="nav-item" />
+            <Label text="Sales" onMouseClicked="#switchToSales" styleClass="nav-item" />
+            <Label text="Customer" onMouseClicked="#switchToCustomer" styleClass="nav-item" />
+            <Label text="Administrative" onMouseClicked="#switchToAdministrative" styleClass="nav-item" />
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="10" styleClass="content-panel">
+            <HBox spacing="10">
+                <TextField fx:id="orderSearchBar" promptText="Search Orders"/>
+                <Button text="Search" onAction="#searchOrders"/>
+            </HBox>
+            <ListView fx:id="ordersList"/>
+            <HBox spacing="10">
+                <Label text="Selected Order:"/>
+                <Label fx:id="selectedOrderLabel"/>
+            </HBox>
+            <VBox spacing="10">
+                <Button text="Download Bill" onAction="#downloadBill" />
+                <TextField fx:id="customerNameField" promptText="Enter Customer Name" />
+                <TextField fx:id="customerPhoneField" promptText="Enter Mobile Number" />
+            </VBox>
+        </VBox>
+    </center>
+    <right>
+        <VBox spacing="10" styleClass="content-panel">
+            <HBox spacing="10">
+                <TextField fx:id="itemSearchBar" promptText="Search Items"/>
+                <Button text="Search" onAction="#searchItems"/>
+            </HBox>
+            <ListView fx:id="itemsList"/>
+            <TextArea fx:id="itemDescriptionField" editable="false" prefHeight="100"/>
+            <HBox spacing="10" alignment="CENTER">
+                <TextField fx:id="quantityField" promptText="Enter Quantity" />
+                <Button text="Add Item" onAction="#addItemToBill" />
+            </HBox>
+            <ListView fx:id="addedItemsList" prefHeight="150" />
+            <TextField fx:id="discountField" promptText="Discount"/>
+            <TextField fx:id="amountReceivedField" promptText="Amount Received"/>
+            <TextArea fx:id="billingAddressField" promptText="Billing Address"/>
+            <TextArea fx:id="shippingAddressField" promptText="Shipping Address"/>
+        </VBox>
+    </right>
+</BorderPane>

@@ -1,0 +1,100 @@
+/* Left Navigation Panel */
+
+.nav-panel {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 10;
+}
+
+.nav-item {
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+    -fx-cursor: hand;
+}
+
+.nav-item:hover {
+    -fx-background-color: #34495e;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+/* Main Content */
+.items-section {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 10;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-min-width: 300px;
+}
+
+.search-bar {
+    -fx-pref-width: 200px;
+    -fx-padding: 5;
+}
+
+.search-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 5 10;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.search-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Item List */
+.items-list {
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+/* Item Details */
+.item-details {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 10;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-min-width: 300px;
+}
+
+.item-image {
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.item-description {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 10;
+}
+
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #34495e;
+}
+
+.form-input {
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5;
+}
+
+.action-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 5 10;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.action-button:hover {
+    -fx-background-color: #2980b9;
+}

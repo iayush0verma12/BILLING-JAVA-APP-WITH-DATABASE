@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.CustomerController" stylesheets="customer.css">
+
+    <!-- Left Navigation Panel -->
+    <left>
+        <VBox fx:id="navPanel" styleClass="nav-panel">
+            <Label text="Dashboard" onMouseClicked="#switchToDashboard" styleClass="nav-item" />
+            <Label text="Items" onMouseClicked="#switchToItems" styleClass="nav-item" />
+            <Label text="Sales" onMouseClicked="#switchToSales" styleClass="nav-item" />
+            <Label text="Customer" onMouseClicked="#switchToCustomer" styleClass="nav-item" />
+            <Label text="Administrative" onMouseClicked="#switchToAdministrative" styleClass="nav-item" />
+        </VBox>
+    </left>
+
+    <!-- Main Content -->
+    <center>
+        <HBox styleClass="customer-container">
+            <!-- Search Section -->
+            <VBox styleClass="search-section">
+                <HBox>
+                    <TextField fx:id="searchField" promptText="Search customers..." styleClass="search-bar" />
+                    <Button text="Search" onAction="#searchCustomers" styleClass="search-button" />
+                </HBox>
+                <ListView fx:id="customersList" styleClass="customers-list" />
+            </VBox>
+
+            <!-- Customer Details Section -->
+            <VBox styleClass="details-section">
+                <ImageView fx:id="customerImage" fitWidth="150" fitHeight="150" styleClass="customer-image" />
+                <Label fx:id="customerName" text="Name of Customer" styleClass="customer-detail" />
+                <Label fx:id="customerContact" text="Contact No." styleClass="customer-detail" />
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

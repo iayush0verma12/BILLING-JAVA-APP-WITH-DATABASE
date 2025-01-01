@@ -1,0 +1,32 @@
+/* General VBox Styling */
+VBox {
+    -fx-background-color: #f4f4f4;
+    -fx-border-radius: 10;
+    -fx-border-color: #ccc;
+}
+
+/* Logo (optional drop shadow effect) */
+ImageView {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0, 5);
+}
+
+/* Text Fields */
+.text-field, .password-field {
+    -fx-border-color: #4caf50;
+    -fx-border-radius: 5;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+/* Login Button */
+.login-button {
+    -fx-background-color: linear-gradient(to bottom, #4caf50, #2e7d32);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5;
+}
+
+.login-button:hover {
+    -fx-background-color: #45a049;
+}

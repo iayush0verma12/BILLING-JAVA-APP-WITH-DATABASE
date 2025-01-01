@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      stylesheets="@styles.css"
+      fx:controller="org.example.LoginController">
+    <!-- Logo -->
+    <ImageView fitWidth="200" fitHeight="200">
+        <Image url="@assets/pve.png" />
+    </ImageView>
+
+    <!-- Username and Password -->
+    <TextField fx:id="usernameField" promptText="Enter Username" />
+    <PasswordField fx:id="passwordField" promptText="Enter Password" />
+
+    <!-- Login Button -->
+    <Button text="Login" fx:id="loginButton" styleClass="login-button" onAction="#handleLoginButton" />
+</VBox>

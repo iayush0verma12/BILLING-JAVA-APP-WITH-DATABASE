@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.ItemsController" stylesheets="items.css">
+
+    <!-- Left Navigation Panel -->
+    <left>
+        <VBox fx:id="navPanel" styleClass="nav-panel">
+            <Label text="Dashboard" onMouseClicked="#switchToDashboard" styleClass="nav-item" />
+            <Label text="Items" styleClass="nav-item" />
+            <Label text="Sales" onMouseClicked="#switchToSales" styleClass="nav-item" />
+            <Label text="Customer" onMouseClicked="#switchToCustomer" styleClass="nav-item" />
+            <Label text="Administrative" onMouseClicked="#switchToAdministrative" styleClass="nav-item" />
+        </VBox>
+    </left>
+
+    <!-- Main Content -->
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            <!-- Add Item Section -->
+            <VBox spacing="10" styleClass="add-item-section">
+                <HBox spacing="10">
+                    <Label text="ID:" styleClass="form-label" />
+                    <TextField fx:id="idField" promptText="Enter ID" styleClass="form-input" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Name:" styleClass="form-label" />
+                    <TextField fx:id="nameField" promptText="Enter Name" styleClass="form-input" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Barcode:" styleClass="form-label" />
+                    <TextField fx:id="barcodeField" promptText="Enter Barcode" styleClass="form-input" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Price:" styleClass="form-label" />
+                    <TextField fx:id="priceField" promptText="Enter Price" styleClass="form-input" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Quantity:" styleClass="form-label" />
+                    <TextField fx:id="quantityField" promptText="Enter Quantity" styleClass="form-input" />
+                </HBox>
+                <HBox spacing="10">
+                    <Button text="Choose Image" onMouseClicked="#chooseImage" styleClass="action-button" />
+                    <TextField fx:id="imagePathField" promptText="Image Path" styleClass="form-input" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Billing Address:" styleClass="form-label" />
+                    <TextArea fx:id="billingAddressField" promptText="Enter Billing Address" styleClass="form-input" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Shipping Address:" styleClass="form-label" />
+                    <TextArea fx:id="shippingAddressField" promptText="Enter Shipping Address" styleClass="form-input" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Discount (₹):" styleClass="form-label" />
+                    <TextField fx:id="discountField" promptText="Enter Discount" styleClass="form-input" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Received Amount (₹):" styleClass="form-label" />
+                    <TextField fx:id="receivedAmountField" promptText="Enter Received Amount" styleClass="form-input" />
+                </HBox>
+                <Button text="Add Item" onMouseClicked="#addItem" styleClass="action-button" />
+                <Button text="Print Bill" onMouseClicked="#printBill" styleClass="action-button" />
+            </VBox>
+
+            <!-- Search and Item List -->
+            <HBox spacing="20" style="-fx-padding: 20;">
+                <VBox spacing="10" styleClass="items-section">
+                    <HBox spacing="10">
+                        <TextField fx:id="searchBar" promptText="Search Items..." styleClass="search-bar" />
+                        <Button text="Search" onMouseClicked="#searchItems" styleClass="search-button" />
+                    </HBox>
+                    <ListView fx:id="itemsList" styleClass="items-list" />
+                </VBox>
+
+                <!-- Item Details -->
+                <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="item-details-scroll">
+                    <VBox spacing="10" styleClass="item-details">
+                        <!-- Display the item image -->
+                        <ImageView fx:id="itemImage" fitWidth="200" fitHeight="200" preserveRatio="true" styleClass="item-image" />
+
+                        <!-- Display the item description with scrolling enabled -->
+                        <Label fx:id="itemDescription" wrapText="true" styleClass="item-description" />
+                    </VBox>
+                </ScrollPane>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

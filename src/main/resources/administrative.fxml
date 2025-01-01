@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.AdministrativeController" stylesheets="@administrative.css">
+
+    <!-- Left Navigation Panel -->
+    <left>
+        <VBox fx:id="navPanel" styleClass="nav-panel">
+            <Label text="Dashboard" onMouseClicked="#switchToDashboard" styleClass="nav-item"/>
+            <Label text="Items" onMouseClicked="#switchToItems" styleClass="nav-item"/>
+            <Label text="Sales" onMouseClicked="#switchToSales" styleClass="nav-item"/>
+            <Label text="Customer" onMouseClicked="#switchToCustomer" styleClass="nav-item"/>
+            <Label text="Administrative" styleClass="nav-item"/>
+        </VBox>
+    </left>
+
+    <!-- Main Content -->
+    <center>
+        <VBox spacing="20" styleClass="admin-container">
+            <!-- Add or Manage Users Section -->
+            <Label text="Add or Manage Users" styleClass="section-header"/>
+            <GridPane hgap="10" vgap="10">
+                <Label text="User ID:"/>
+                <TextField fx:id="userIdField" promptText="Enter User ID"/>
+                <Label text="Username:" GridPane.rowIndex="1"/>
+                <TextField fx:id="usernameField" promptText="Enter Username" GridPane.rowIndex="1"/>
+                <Label text="Password:" GridPane.rowIndex="2"/>
+                <HBox GridPane.rowIndex="2">
+                    <PasswordField fx:id="passwordField" promptText="Enter Password" />
+                    <CheckBox fx:id="showPasswordCheckBox" text="Show" />
+                </HBox>
+                <Button text="Add User" onAction="#addUser" GridPane.rowIndex="3"/>
+                <Button text="Update User" onAction="#updateUser" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                <Button text="Remove User" onAction="#removeUser" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+            </GridPane>
+
+            <VBox>
+                <Button text="Reset Dashboard" onAction="#resetDashboardData" />
+                <Button text="Reset Sales" onAction="#resetSalesData" />
+                <Button text="Reset Items" onAction="#resetItemsData" />
+                <Button text="Reset Customers" onAction="#resetCustomerData" />
+            </VBox>
+
+
+            <!-- Users Table -->
+            <Label text="All Users" styleClass="section-header"/>
+            <TableView fx:id="usersTable" prefWidth="600">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="User ID" prefWidth="100"/>
+                    <TableColumn fx:id="usernameColumn" text="Username" prefWidth="200"/>
+                    <TableColumn fx:id="passwordColumn" text="Password" prefWidth="300"/>
+                </columns>
+            </TableView>
+
+            <!-- System Logs -->
+            <Label text="System Logs" styleClass="section-header"/>
+            <TextArea fx:id="logsArea" editable="false" styleClass="logs-area"/>
+        </VBox>
+
+    </center>
+</BorderPane>
